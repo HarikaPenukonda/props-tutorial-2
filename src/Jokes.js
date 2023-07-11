@@ -13,8 +13,11 @@ import React from "react";
 export default function Jokes(props){
     return(
         <div>
-             <p><strong>Setup: </strong>{props.setup}</p>
+             {props.setup && <p><strong>Setup: </strong>{props.setup}</p>}
+             {/* If props.setup is true then render the thing on the right side of && operator
+             If it is false, it will not render anything at all */}
              <p><strong>Punchline: </strong>{props.punchline}</p>
+             <hr/>
         </div>
        
     )
