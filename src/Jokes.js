@@ -1,12 +1,20 @@
 import React from "react";
 
 /*
-    Challenge:
+    Challenge 1 :
         Set up a React app from scratch
         - Render an <App/> component
             - App should render 4-5 <Joke/> components
             - Each Joke should recieve a setup prop and punchline prop 
             and render those however we would like
+
+    Challenge 2 :
+        How would we pass in a prop that wasnt a string datatype - curlybraces
+
+        E.g. Say you want each joke component to recieve upvotes and downvotes prop
+        that is a number, as well as a prop with an array of comments and boolean of whether 
+        the joke is a pun (`isPun`)
+
     
 */
 
