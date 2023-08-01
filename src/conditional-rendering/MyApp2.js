@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function MyApp2(){
-    const [messages,setMessages] = React.useState([])
+    const [messages,setMessages] = React.useState(["a","b"])
 
     /*
         Challenge 1:
@@ -13,7 +13,7 @@ export default function MyApp2(){
     return(
         <div>
         {
-            messages.length === 0 ? <h1>You are all caught up!</h1> : <h1>You have {messages.length} unread message{messages.length>1 && "s"}</h1>
+            messages.length === 0 ? <h1>You are all caught up!</h1> : <h1>You have {messages.length} unread {messages.length>1 ? "messages" : "message"}</h1>
         }
         </div>
     )
