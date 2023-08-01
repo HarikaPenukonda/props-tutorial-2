@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function MyApp(){
-    const [messages, setMessages] = React.useState(["a","b"])
+    const [messages] = React.useState(["a","b"])
     /*
         challenge:
             - only display the <h1> below if there are unread messages
