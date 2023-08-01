@@ -18,7 +18,8 @@ export default function Jokes(props){
              {props.setup && <p><strong>Setup: </strong>{props.setup}</p>}
              {/* If props.setup is true then render the thing on the right side of && operator
              If it is false, it will not render anything at all */}
-            {isShown ? <p><strong>Punchline: </strong>{props.punchline}</p> : " "}
+            {/* {isShown ? <p><strong>Punchline: </strong>{props.punchline}</p> : " "} -> using ternary */}
+            {isShown && <p><strong>Punchline: </strong>{props.punchline}</p>}
             <br></br>
              <button onClick={handleClick}>Show Punchline</button>
              <hr/>
