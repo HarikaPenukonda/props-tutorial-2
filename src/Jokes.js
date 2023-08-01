@@ -20,7 +20,7 @@ export default function Jokes(props){
              If it is false, it will not render anything at all */}
             {isShown ? <p><strong>Punchline: </strong>{props.punchline}</p> : " "}
             <br></br>
-             <button onClick={handleClick}>Click Me for Answer!</button>
+             <button onClick={handleClick}>Show Punchline</button>
              <hr/>
         </div>
        
