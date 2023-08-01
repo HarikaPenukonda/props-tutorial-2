@@ -1,7 +1,8 @@
 import React from "react";
 import Jokes from "./Jokes";
 import jokesData from "./jokesData";
-import MyApp2 from "./conditional-rendering/MyApp2";
+//import MyApp2 from "./conditional-rendering/MyApp2";
+import Form1 from "./react-forms/Form1"
 
 export default function App(){
     const jokeElement = jokesData.map(joke => {
@@ -14,7 +15,8 @@ export default function App(){
     return(
         <div>
             {/* {jokeElement} */}
-            <MyApp2/>
+            {/* <MyApp2/> */}
+            <Form1/>
         </div>
                   
     )
