@@ -21,7 +21,8 @@ export default function Jokes(props){
             {/* {isShown ? <p><strong>Punchline: </strong>{props.punchline}</p> : " "} -> using ternary */}
             {isShown && <p><strong>Punchline: </strong>{props.punchline}</p>}
             <br></br>
-             <button onClick={handleClick}>Show Punchline</button>
+             {/* {isShown ? <button onClick={handleClick}>Hide Punchline</button> : <button onClick={handleClick}>Show Punchline</button>} one way*/}
+             <button onClick={handleClick}>{isShown ? "Hide" : "Show" } Punchline</button>
              <hr/>
         </div>
        
