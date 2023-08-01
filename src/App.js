@@ -1,7 +1,7 @@
 import React from "react";
 import Jokes from "./Jokes";
 import jokesData from "./jokesData";
-//import MyApp from "./conditional-rendering/MyApp";
+import MyApp2 from "./conditional-rendering/MyApp2";
 
 export default function App(){
     const jokeElement = jokesData.map(joke => {
@@ -13,8 +13,8 @@ export default function App(){
     })
     return(
         <div>
-            {jokeElement}
-            {/* <MyApp/> */}
+            {/* {jokeElement} */}
+            <MyApp2/>
         </div>
                   
     )

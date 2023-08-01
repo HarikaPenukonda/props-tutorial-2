@@ -25,6 +25,5 @@ export default function Jokes(props){
              <button onClick={handleClick}>{isShown ? "Hide" : "Show" } Punchline</button>
              <hr/>
         </div>
-       
     )
 }
