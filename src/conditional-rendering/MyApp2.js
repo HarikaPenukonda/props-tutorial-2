@@ -15,7 +15,6 @@ export default function MyApp2(){
         {
             messages.length === 0 ? <h1>You are all caught up!</h1> : <h1>You have {messages.length} unread message{messages.length>1 && "s"}</h1>
         }
-            {/* <h1>{messages.length === 1 ? `You have ${messages.length} unread message` : `You have ${messages.length} unread messages`}</h1>             */}
         </div>
     )
 }
