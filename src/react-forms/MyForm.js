@@ -2,17 +2,27 @@ import React from "react";
 
 export default function MyApp(){
     const [firstName, setFirstName] = React.useState("")
+    const [lastName, setLastName] = React.useState("")
+
+     /* Challenge : Track the applicants last name as well */ 
     
-    function handleChange(event){
-        console.log(event.target.value)
+    function handleFirstNameChange(event){
+        setFirstName(event.target.value)
+    }
+    function handleLastNameChange(event){
+        setLastName(event.target.value)
     }
     return(
         <form>
             <input
                 type="text"
                 placeholder="First Name"
-                // listen for any changes that happen to this input
-                onChange={handleChange}
+                onChange={handleFirstNameChange}
+            />
+            <input
+                type="text"
+                placeholder="Last Name"
+                onChange={handleLastNameChange}
             />
         </form>
     )
