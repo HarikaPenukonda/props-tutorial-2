@@ -8,8 +8,9 @@ export default function MyForm(){
         comment : "",
         isFriendly : true,
         employment: "",
+        favColor: "",
     })
-   console.log(formData.employment)
+   console.log(formData.favColor)
 
     function handleChange(event){
         const {name,value,type,checked} = event.target
@@ -97,6 +98,23 @@ export default function MyForm(){
                 <label htmlFor="full-time">Full-time</label>
                 <br/>
             </fieldset>
+            <br/>
+            <label htmlFor="favColor">What is your favourite color?</label>
+            <br/>
+            <select 
+                id="favColor"
+                value={formData.favColor}
+                onChange={handleChange}
+                name="favColor"
+                >
+                <option value="red">Red</option>
+                <option value="yellow">Yellow</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="indigo">Indigo</option>
+                <option value="violet">Violet</option>
+            </select>
+
         </form>
         </div>
         
@@ -104,6 +122,8 @@ export default function MyForm(){
 }
 
 /*  
+    select & option
+
     Radio Buttons :
         radio buttons are combination of checkboxes and text inputs. 
         each of these inputs will have its own unique values and this value is what will 
