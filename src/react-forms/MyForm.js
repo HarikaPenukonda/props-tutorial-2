@@ -107,6 +107,7 @@ export default function MyForm(){
                 onChange={handleChange}
                 name="favColor"
                 >
+                <option value="">-- Choose --</option>
                 <option value="red">Red</option>
                 <option value="yellow">Yellow</option>
                 <option value="blue">Blue</option>
