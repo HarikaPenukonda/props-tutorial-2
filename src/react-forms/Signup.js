@@ -41,12 +41,6 @@ export default function Signup(){
         })
     }
 
-    function validation(){
-        formData.password === formData.confirmPassword ?
-        console.log("successfully signed up") :
-        console.log("passwords to not match")
-    }
-
     
 
     return(
@@ -91,7 +85,8 @@ export default function Signup(){
                 </div>
                 <button 
                     className="form--submit"
-                    onClick={validation}
+                    onClick={()=>formData.password === formData.confirmPassword ?
+                    console.log("successfully signed up") :console.log("passwords to not match")}
                     >
                     Sign up
                 </button>
