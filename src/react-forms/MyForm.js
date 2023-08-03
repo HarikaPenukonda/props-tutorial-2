@@ -68,6 +68,12 @@ export default function MyForm(){
 
         To do this simply add a value property to each one of our inputs 
 
+        visually we do not see any difference, conceptually however when i type into the 
+        firstname `bob` the value of this input box is no longer controlled by the input
+        but rather by react.
+
+        Now the react controls the input value.
+
 */
 
 /*
