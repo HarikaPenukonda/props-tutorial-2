@@ -36,7 +36,7 @@ export default function MyForm(){
                 name="lastName"
             />
             <input
-                type="text"
+                type="email"
                 placeholder="Email"
                 onChange={handleChange}
                 name="email"
