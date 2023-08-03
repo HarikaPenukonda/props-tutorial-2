@@ -7,8 +7,9 @@ export default function MyForm(){
         email : "",
         comment : "",
         isFriendly : true,
+        employment: "",
     })
-   console.log(formData)
+   console.log(formData.employment)
 
     function handleChange(event){
         const {name,value,type,checked} = event.target
@@ -59,6 +60,43 @@ export default function MyForm(){
 
             />
             <label htmlFor="isFriendly">Are you friendly?</label>
+            <br/>
+            <br/>
+            <fieldset>
+                <legend>Current employment status</legend>
+                <input
+                    type="radio"
+                    id="unemployed"
+                    name="employment"
+                    value="unemployed"
+                    checked={formData.employment === "unemployed"}
+                    onChange={handleChange}
+
+                />
+                <label htmlFor="unemployed">Unemployed</label>
+                <br/>
+                <input
+                    type="radio"
+                    id="part-time"
+                    name="employment"
+                    value="part-time"
+                    checked={formData.employment === "part-time"}
+                    onChange={handleChange}
+                
+                />
+                <label htmlFor="part-time">Part-time</label>
+                <br/>
+                <input
+                    type="radio"
+                    id="full-time"
+                    name="employment"
+                    value="full-time"
+                    checked={formData.employment === "full-time"}
+                    onChange={handleChange}
+                />
+                <label htmlFor="full-time">Full-time</label>
+                <br/>
+            </fieldset>
         </form>
         </div>
         
@@ -66,6 +104,35 @@ export default function MyForm(){
 }
 
 /*  
+    Radio Buttons :
+        radio buttons are combination of checkboxes and text inputs. 
+        each of these inputs will have its own unique values and this value is what will 
+        actually get saved as the value is state, when this specific input is selected.
+
+        radio buttons are little different because we need to specify what value the state
+        should take on if the radio button is selected or checked. However, that means that
+        we cannot do controlled components in the same way that we did with our inputs by setting
+        the value equal to whatever the current value of state is but that doesn't mean we cannot
+        control these components, its just that radio buttons are controlled in the same way 
+        that checkboxes are contolled.
+
+        if try to do checked={formData.employement} we run into a bug 
+        when we are controlling the checked property we dont simply say checked={formData.employment} because 
+        unlike a checkbox this is not a boolean value. we can make it a boolean value by checking
+        if checked={formData.employment === "unemployed"} 
+
+        Now the react is in charge of controlling this input rather than the input having its
+        own html state
+
+        Initally when we hit refresh the value of formData.employment is an empty string
+        when i click unemployed, it runs the `onChange` which we have defined . we are pulling
+        name, type, value and checked and setting the formData, bringing in all the old data 
+        now we are using name which we had set to employment as the key for our state that
+        we are updating and the type checkbox , in reality this is not checkbox  its a radio
+        so it skips the checked value and instead uses this value inside <input/> that
+        we defined, when we change state react re-renders our form, it checks to see if the 
+        current formData.employment === `unemployed` when we check it becomes a true statement
+        and therefore checked is true 
 
     Best practice:
 
