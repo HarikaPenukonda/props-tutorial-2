@@ -11,10 +11,11 @@ export default function MyForm(){
    console.log(formData)
 
     function handleChange(event){
+        const {name,value,type,checked} = event.target
         setFormData(prevData => {
             return{
                 ...prevData,
-                [event.target.name] : event.target.value
+                [name] : type === "checkbox" ? checked : value
             }
         })
     }
@@ -23,7 +24,7 @@ export default function MyForm(){
         <div>
             <form>
             <input
-                type="text"
+                
                 placeholder="First Name"
                 onChange={handleChange}
                 name="firstName"
@@ -63,6 +64,43 @@ export default function MyForm(){
 }
 
 /*  
+
+    Best practice:
+
+    function handleChange(event){
+        setFormData(prevData => {
+            return{
+                ...prevData,
+                [event.target.name] : event.target.value
+            }
+        })
+    }
+
+    we should not put the entire event.target.value and event.target.name inside setFormData
+    A much better way is to destructre event.target and pull out the values that we need.
+
+    const {name,value} = event.target
+    and change [event.target.name] : event.target.value to -> [name] : value
+
+    when we are handling checkbox there are few more things we need to pass in 
+    one property that will come in is the type property on all of our inputs
+        type="text",type="email",type="checkbox"
+
+    lets bring in that `type` so that we can check whether or not the input that's making
+    this `handleChange` function run is a type of checkbox and if it is we are also going
+    to need the `checked` property.
+    const {name,value,type,checked} = event.target
+    This is either going to be true or false, depending on how the user has interacted with 
+    the checkbox.
+
+    when we are setting the form data we want everything else essentially to be the same
+    however, the piece of state we want to update if its a checkbox in our case `isFriendly` 
+    property should not take on value but rather should take on the value of checked. we can use
+    ternary here.
+        [name] : type === "checkbox" ? checked : value
+
+
+
 
     checkbox :
         hold boolean values
