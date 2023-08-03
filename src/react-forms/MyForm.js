@@ -3,11 +3,19 @@ import React from "react";
 export default function MyForm(){
     const [firstName,setFirstName] = React.useState("")
 
+    // everytime the first name state changes it will re-render our component and 
+    // therefore re-run the console.log
+    console.log(firstName)
+    /*
+        Challenge 1 : update the firstName state on every key stroke
+    */ 
+
     function handleChange(event){
+        setFirstName(event.target.value)
         // logging the current value of every keystroke of input box
-        //j jo joe
-        console.log(event.target.value) 
-        console.log("Changed")
+        // j jo joe
+        // console.log(event.target.value) 
+        // console.log("Changed")
     }
 
     return(
