@@ -82,7 +82,7 @@ export default function Signup(){
                         type="checkbox"
                         onChange={handleChange}
                         name="isMarketing"
-                        checked={formData.isMarketing && console.log("Thanks for signing up for our newsletter!")}
+                        checked={formData.isMarketing}
                     />
                     <label htmlFor="okayToEmail">I want to join the newsletter</label>
                 </div>
