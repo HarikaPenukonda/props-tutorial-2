@@ -54,6 +54,8 @@ export default function MyForm(){
                 type="checkbox"
                 id="isFriendly"
                 checked={formData.isFriendly}
+                onChange={handleChange}
+                name="isFriendly"
 
             />
             <label htmlFor="isFriendly">Are you friendly?</label>
