@@ -47,6 +47,8 @@ export default function Signup(){
         console.log("passwords to not match")
     }
 
+    
+
     return(
         <div>
              <div className="form-container">
@@ -83,6 +85,7 @@ export default function Signup(){
                         onChange={handleChange}
                         name="isMarketing"
                         checked={formData.isMarketing}
+                        onClick={()=>!formData.isMarketing && console.log("Thanks for signing up for our newsletter!")}
                     />
                     <label htmlFor="okayToEmail">I want to join the newsletter</label>
                 </div>
