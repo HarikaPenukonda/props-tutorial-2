@@ -28,24 +28,47 @@ export default function MyForm(){
                 placeholder="First Name"
                 onChange={handleChange}
                 name="firstName"
+                value={formData.firstName}
             />
             <input
                 type="text"
                 placeholder="Last Name"
                 onChange={handleChange}
                 name="lastName"
+                value={formData.lastName}
             />
             <input
                 type="email"
                 placeholder="Email"
                 onChange={handleChange}
                 name="email"
+                value={formData.email}
             />
         </form>
         </div>
         
     )
 }
+
+/*
+    Controlled Inputs
+        In this case, in the markup inside of our inputs (firstname, lastname and email)
+        each of these inputs in effect is holding its own state.
+        
+        In a regular html form where no react is involved at all when the user types into
+        the input box essentially that input box is maintaining its own state .
+        
+        In this case we have two pieces of state:
+            1. one is being held by the input box just in regular html
+            2. other is updating on every keystroke held in our react code.
+        
+        ofCourse, we have set it up so that the state of our input box then perfectly gets
+        mirrored by the state in react. However, a good practice in react is to make it so that
+        our react state is what drives the state that's visible inside the input box.
+
+        To do this simply add a value property to each one of our inputs 
+
+*/
 
 /*
     - In handleChange() in this parameter we can actually recieve as a part of my event listener function.
