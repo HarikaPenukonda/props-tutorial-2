@@ -27,6 +27,16 @@ export default function Signup(){
 
     function handleSubmit(event){
         event.preventDefault()
+        if(formData.password === formData.confirmPassword){
+            console.log("successfully signed up")
+        }else{
+            console.log("passwords to not match")
+            return
+        }
+
+        if(!formData.isMarketing){
+            console.log("Thanks for signing up for our newsletter!")
+        }
     }
     console.log(formData)
 
@@ -79,14 +89,11 @@ export default function Signup(){
                         onChange={handleChange}
                         name="isMarketing"
                         checked={formData.isMarketing}
-                        onClick={()=>!formData.isMarketing && console.log("Thanks for signing up for our newsletter!")}
                     />
                     <label htmlFor="okayToEmail">I want to join the newsletter</label>
                 </div>
                 <button 
                     className="form--submit"
-                    onClick={()=>formData.password === formData.confirmPassword ?
-                    console.log("successfully signed up") :console.log("passwords to not match")}
                     >
                     Sign up
                 </button>
