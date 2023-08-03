@@ -10,7 +10,6 @@ export default function MyForm(){
         employment: "",
         favColor: "",
     })
-   console.log(formData.favColor)
 
     function handleChange(event){
         const {name,value,type,checked} = event.target
@@ -21,10 +20,22 @@ export default function MyForm(){
             }
         })
     }
+    /*
+    The way we have setup our form in react is now instead of having to go through everyone
+    of inputs and gather the value right at the last second before we submit this to maybe an api,
+    we have been doing that all along as we have been updating state on every change of the inputs
+    and elements of the form
+    */
+    function handleSubmit(event){
+        event.preventDefault() 
+        /* preventing the default means it wont refresh our page and essentially re-render our app with all of these default values and state preventDefault just stops all the of that from happening
+         and makes it so that we can run code the way that we actually want to */
+        console.log(formData) // logs the object
+    }
 
     return(
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
             <input
                 
                 placeholder="First Name"
@@ -115,6 +126,14 @@ export default function MyForm(){
                 <option value="indigo">Indigo</option>
                 <option value="violet">Violet</option>
             </select>
+        <br/>
+        <br/>
+        <br/>
+        <button>Submit</button>
+        {/* <input 
+            type="submit"
+            value="Submit it"
+            /> */}
 
         </form>
         </div>
@@ -123,6 +142,12 @@ export default function MyForm(){
 }
 
 /*  
+    Submit : button inside form element its type is automatically submit bydefault
+    clicking this button, because this button is found inside of the form will trigger the
+    form `onSubmit` event handler
+
+
+
     select & option
 
     Radio Buttons :
