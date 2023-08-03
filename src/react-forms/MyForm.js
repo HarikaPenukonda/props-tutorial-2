@@ -4,25 +4,7 @@ export default function MyForm(){
     const [firstName,setFirstName] = React.useState("")
 
     function handleChange(event){
-        console.log(event)
-        /*
-            SyntheticBaseEvent {_reactName: 'onChange', _targetInst: null, type: 'change', nativeEvent: InputEvent, target: input, …}
-            bubbles : true
-            cancelable : false
-            currentTarget : null
-            defaultPrevented : false
-            eventPhase : 3 
-            isDefaultPrevented : ƒ functionThatReturnsFalse()
-            isPropagationStopped : ƒ functionThatReturnsFalse()
-            isTrusted : true
-            nativeEvent : InputEvent {isTrusted: true, data: 'b', isComposing: false, inputType: 'insertText', dataTransfer: null, …}
-            target : input
-            timeStamp : 14484
-            type : "change"
-            _reactName : "onChange"
-            _targetInst : null
-            [[Prototype]]: Object
-        */
+        console.log(event.target) 
         console.log("Changed")
     }
 
@@ -75,3 +57,25 @@ export default function MyForm(){
        have gathered the data and we simply submit that to our api and pass in the state that we have been tracking all along
 
 */
+
+ /*
+    console.log(event)
+            SyntheticBaseEvent {_reactName: 'onChange', _targetInst: null, type: 'change', nativeEvent: InputEvent, target: input, …}
+            bubbles : true
+            cancelable : false
+            currentTarget : null
+            defaultPrevented : false
+            eventPhase : 3 
+            isDefaultPrevented : ƒ functionThatReturnsFalse()
+            isPropagationStopped : ƒ functionThatReturnsFalse()
+            isTrusted : true
+            nativeEvent : InputEvent {isTrusted: true, data: 'b', isComposing: false, inputType: 'insertText', dataTransfer: null, …}
+            target : input
+            timeStamp : 14484
+            type : "change"
+            _reactName : "onChange"
+            _targetInst : null
+            [[Prototype]]: Object
+
+    console.log(event.target) <input type="text" placeholder="First Name">
+        */
