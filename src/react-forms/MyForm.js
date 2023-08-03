@@ -1,19 +1,23 @@
 import React from "react";
 
 export default function MyForm(){
-    const [firstName,setFirstName] = React.useState("")
-    const [lastName,setLastName] = React.useState("")
-    console.log(firstName)
-    console.log(lastName)
-    /*
-        Challenge 2 : Track the applicant's last name as well
-    */ 
+    const [formData,setFormData] = React.useState({
+        firstName : "",
+        lastName : ""
+    })
+   console.log(formData)
 
-    function handleFirstNameChange(event){
-        setFirstName(event.target.value)
-    }
-    function handleLastNameChange(event){
-        setLastName(event.target.value)
+    function handleChange(event){
+        setFormData(prevData => {
+            return{
+                ...prevData,
+                [event.target.name] : event.target.value
+                //event.target.name : event.target.value //syntax error
+                /*es6 feature - computed properties
+                surround the key in [], it turns a dynamic string like saved in a variable
+                and use is as the property name for our object*/
+            }
+        })
     }
 
     return(
@@ -22,12 +26,14 @@ export default function MyForm(){
             <input
                 type="text"
                 placeholder="First Name"
-                onChange={handleFirstNameChange}
+                onChange={handleChange}
+                name="firstName"
             />
             <input
                 type="text"
                 placeholder="Last Name"
-                onChange={handleLastNameChange}
+                onChange={handleChange}
+                name="lastName"
             />
         </form>
         </div>
