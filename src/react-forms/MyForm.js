@@ -5,12 +5,9 @@ export default function MyForm(){
         firstName : "",
         lastName : "",
         email : "",
-        comment : ""
+        comment : "",
+        isFriendly : true,
     })
-    /*
-        Challenge 4 : Add a textarea for comments to the form
-            Make sure to update state when it changes
-    */
    console.log(formData)
 
     function handleChange(event){
@@ -52,6 +49,13 @@ export default function MyForm(){
                 name="comment"
                 placeholder="your comment"
             />
+            <input
+                type="checkbox"
+                id="isFriendly"
+                checked={formData.isFriendly}
+
+            />
+            <label htmlFor="isFriendly">Are you friendly?</label>
         </form>
         </div>
         
@@ -59,6 +63,31 @@ export default function MyForm(){
 }
 
 /*  
+
+    checkbox :
+        hold boolean values
+
+        htmlFor : when we have a label that is supposed to be tied to another input, we have
+        couple of options, we could nest the input directly inside the children of the label,
+        what it does is if the label gets clicked it will automatically propogate that click 
+        down to the input.
+        If we keep the label as its own seperate element and point that label using htmlFor
+        to the id of the <input/> so that they are associated to the one and the other.
+
+        In the plain html we are probably are just using `for` but the underlying dom element
+        is really called htmlFor
+
+        we use `checked` property instead of value property, because a checkbox is checked or 
+        unchecked. The value we put here is checked needs to be a boolean
+
+        As the default value is true in our code so the box is checked we are having react dictate 
+        to the box that it is checked in fact because thats what state is.
+
+        when we are trying to uncheck it doesnt work because we have been looking at 
+        event.target.value however with checkbox we are not looking at the value property
+        instead we are looking at the checked property
+        
+
     html form textarea vs react form textarea
         In regular html textarea is a little different than an input because it is not selfclosing
         it has its own seperate closing tag.
