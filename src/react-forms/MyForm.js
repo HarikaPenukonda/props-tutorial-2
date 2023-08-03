@@ -50,7 +50,17 @@ export default function MyForm(){
     )
 }
 
-/*
+/*  
+    html form textarea vs react form textarea
+        In regular html textarea is a little different than an input because it is not selfclosing
+        it has its own seperate closing tag.
+        In html whatever we put inside the opening and closing tags is the value of the text area
+
+        The react textarea is much more similar to a text-based input, so there is no closing tag
+        and just like our inputs we are going to add `value` property to it and that is going 
+        to be the value inside the text area.
+
+
     Controlled Inputs
         In this case, in the markup inside of our inputs (firstname, lastname and email)
         each of these inputs in effect is holding its own state.
