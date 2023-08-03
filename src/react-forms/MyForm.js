@@ -3,8 +3,12 @@ import React from "react";
 export default function MyForm(){
     const [formData,setFormData] = React.useState({
         firstName : "",
-        lastName : ""
+        lastName : "",
+        email : ""
     })
+    /*
+        Challenge : add an email field/state to the form
+    */
    console.log(formData)
 
     function handleChange(event){
@@ -12,10 +16,6 @@ export default function MyForm(){
             return{
                 ...prevData,
                 [event.target.name] : event.target.value
-                //event.target.name : event.target.value //syntax error
-                /*es6 feature - computed properties
-                surround the key in [], it turns a dynamic string like saved in a variable
-                and use is as the property name for our object*/
             }
         })
     }
@@ -34,6 +34,12 @@ export default function MyForm(){
                 placeholder="Last Name"
                 onChange={handleChange}
                 name="lastName"
+            />
+            <input
+                type="text"
+                placeholder="Email"
+                onChange={handleChange}
+                name="email"
             />
         </form>
         </div>
