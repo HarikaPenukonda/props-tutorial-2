@@ -4,7 +4,9 @@ export default function MyForm(){
     const [firstName,setFirstName] = React.useState("")
 
     function handleChange(event){
-        console.log(event.target) 
+        // logging the current value of every keystroke of input box
+        //j jo joe
+        console.log(event.target.value) 
         console.log("Changed")
     }
 
